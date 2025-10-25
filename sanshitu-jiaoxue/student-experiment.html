@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正投影与斜投影对比实验 - 学生实验平台</title>
+    <link rel="stylesheet" href="student-style.css">
+    <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="experiment-header">
+            <h1>正投影与斜投影对比实验</h1>
+            <div class="experiment-info">
+                <div class="info-item">
+                    <label>学生姓名：</label>
+                    <input type="text" id="studentName" placeholder="请输入您的姓名">
+                </div>
+                <div class="info-item">
+                    <label>学号：</label>
+                    <input type="text" id="studentId" placeholder="请输入学号">
+                </div>
+                <div class="info-item">
+                    <label>实验日期：</label>
+                    <input type="date" id="experimentDate" value="2025-10-24">
+                </div>
+            </div>
+        </header>
+
+        <nav class="experiment-nav">
+            <button class="nav-btn active" data-section="theory">实验原理</button>
+            <button class="nav-btn" data-section="simulation">交互实验</button>
+            <button class="nav-btn" data-section="data">数据记录</button>
+            <button class="nav-btn" data-section="analysis">现象分析</button>
+            <button class="nav-btn" data-section="conclusion">实验结论</button>
+        </nav>
+
+        <main class="experiment-content">
+            <!-- 实验原理部分 -->
+            <section id="theory" class="content-section active">
+                <h2>实验原理</h2>
+                
+                <div class="theory-content">
+                    <div class="concept-card">
+                        <h3>投影的基本概念</h3>
+                        <p><strong>投影：</strong>是指物体在光线照射下，在投影面上形成的影子。</p>
+                        <div class="projection-types">
+                            <div class="type-card orthogonal">
+                                <h4>正投影</h4>
+                                <ul>
+                                    <li>投射线垂直于投影面</li>
+                                    <li>投影能够真实反映物体的形状和尺寸</li>
+                                    <li>是工程制图的主要方法</li>
+                                </ul>
+                            </div>
+                            <div class="type-card oblique">
+                                <h4>斜投影</h4>
+                                <ul>
+                                    <li>投射线与投影面成一定角度</li>
+                                    <li>投影会发生变形，产生立体感</li>
+                                    <li>常用于艺术设计和建筑效果图</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="formula-card">
+                        <h3>数学表达式</h3>
+                        <p>设物体上任意一点P(x, y, z)，投影面为xy平面：</p>
+                        <div class="formulas">
+                            <div class="formula">
+                                <strong>正投影：</strong> P'(x, y, 0)
+                            </div>
+                            <div class="formula">
+                                <strong>斜投影：</strong> P'(x + kz, y + lz, 0)
+                                <small>其中k, l为投影方向系数</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-actions">
+                    <button class="btn-primary" onclick="showSection('simulation')">开始实验 →</button>
+                </div>
+            </section>
+
+            <!-- 交互实验部分 -->
+            <section id="simulation" class="content-section">
+                <h2>交互实验</h2>
+                
+                <div class="simulation-content">
+                    <div class="geogebra-container">
+                        <h3>GeoGebra 3D 投影演示</h3>
+                        <div id="geogebra-app" class="geogebra-app"></div>
+                        <div class="geogebra-controls">
+                            <button id="showOrthogonal" class="control-btn">显示正投影</button>
+                            <button id="showOblique" class="control-btn">显示斜投影</button>
+                            <button id="showBoth" class="control-btn">对比显示</button>
+                            <button id="resetView" class="control-btn">重置视图</button>
+                        </div>
+                    </div>
+
+                    <div class="experiment-instructions">
+                        <h3>实验步骤</h3>
+                        <div class="steps">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>观察正方体模型</h4>
+                                    <p>在3D视图中观察蓝色正方体，理解其三维结构</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>演示正投影</h4>
+                                    <p>点击"显示正投影"按钮，观察红色投射线和投影结果</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>演示斜投影</h4>
+                                    <p>点击"显示斜投影"按钮，观察绿色投射线和投影结果</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h4>对比分析</h4>
+                                    <p>点击"对比显示"同时观察两种投影的差异</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-actions">
+                    <button class="btn-secondary" onclick="showSection('theory')">← 返回原理</button>
+                    <button class="btn-primary" onclick="showSection('data')">记录数据 →</button>
+                </div>
+            </section>
+
+            <!-- 数据记录部分 -->
+            <section id="data" class="content-section">
+                <h2>数据记录</h2>
+                
+                <div class="data-content">
+                    <div class="data-input-section">
+                        <h3>原正方体尺寸</h3>
+                        <div class="input-group">
+                            <label>边长 (cm)：</label>
+                            <input type="number" id="cubeEdge" placeholder="请输入测量值" step="0.1">
+                        </div>
+                        <div class="input-group">
+                            <label>体积 (cm³)：</label>
+                            <input type="number" id="cubeVolume" placeholder="请计算体积" step="0.1">
+                        </div>
+                    </div>
+
+                    <div class="data-tables">
+                        <div class="table-section">
+                            <h3>正投影测量数据</h3>
+                            <table class="data-table" id="orthogonalTable">
+                                <thead>
+                                    <tr>
+                                        <th>投影边</th>
+                                        <th>长度 (cm)</th>
+                                        <th>与原长比例</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>AB投影</td>
+                                        <td><input type="number" class="table-input" step="0.1" placeholder="测量值"></td>
+                                        <td><input type="text" class="table-input" placeholder="比例"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>BC投影</td>
+                                        <td><input type="number" class="table-input" step="0.1" placeholder="测量值"></td>
+                                        <td><input type="text" class="table-input" placeholder="比例"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>CD投影</td>
+                                        <td><input type="number" class="table-input" step="0.1" placeholder="测量值"></td>
+                                        <td><input type="text" class="table-input" placeholder="比例"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>DA投影</td>
+                                        <td><input type="number" class="table-input" step="0.1" placeholder="测量值"></td>
+                                        <td><input type="text" class="table-input" placeholder="比例"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="table-section">
+                            <h3>斜投影测量数据</h3>
+                            <table class="data-table" id="obliqueTable">
+                                <thead>
+                                    <tr>
+                                        <th>投影边</th>
+                                        <th>长度 (cm)</th>
+                                        <th>与原长比例</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>AB投影</td>
+                                        <td><input type="number" class="table-input" step="0.1" placeholder="测量值"></td>
+                                        <td><input type="text" class="table-input" placeholder="比例"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>BC投影</td>
+                                        <td><input type="number" class="table-input" step="0.1" placeholder="测量值"></td>
+                                        <td><input type="text" class="table-input" placeholder="比例"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>CD投影</td>
+                                        <td><input type="number" class="table-input" step="0.1" placeholder="测量值"></td>
+                                        <td><input type="text" class="table-input" placeholder="比例"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>DA投影</td>
+                                        <td><input type="number" class="table-input" step="0.1" placeholder="测量值"></td>
+                                        <td><input type="text" class="table-input" placeholder="比例"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-actions">
+                    <button class="btn-secondary" onclick="showSection('simulation')">← 返回实验</button>
+                    <button class="btn-primary" onclick="showSection('analysis')">分析现象 →</button>
+                </div>
+            </section>
+
+            <!-- 现象分析部分 -->
+            <section id="analysis" class="content-section">
+                <h2>现象分析</h2>
+                
+                <div class="analysis-content">
+                    <div class="observation-section">
+                        <h3>实验现象记录</h3>
+                        <div class="phenomenon-cards">
+                            <div class="phenomenon-card">
+                                <h4>正投影现象</h4>
+                                <textarea class="analysis-textarea" placeholder="请描述您观察到的正投影现象..."></textarea>
+                            </div>
+                            <div class="phenomenon-card">
+                                <h4>斜投影现象</h4>
+                                <textarea class="analysis-textarea" placeholder="请描述您观察到的斜投影现象..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="analysis-section">
+                        <h3>现象分析</h3>
+                        <div class="analysis-questions">
+                            <div class="question-card">
+                                <h4>1. 为什么正投影能真实反映物体尺寸？</h4>
+                                <textarea class="analysis-textarea" placeholder="请写出您的分析..."></textarea>
+                            </div>
+                            <div class="question-card">
+                                <h4>2. 斜投影的变形规律是什么？</h4>
+                                <textarea class="analysis-textarea" placeholder="请写出您的分析..."></textarea>
+                            </div>
+                            <div class="question-card">
+                                <h4>3. 两种投影方式的应用场景有何不同？</h4>
+                                <textarea class="analysis-textarea" placeholder="请写出您的分析..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-actions">
+                    <button class="btn-secondary" onclick="showSection('data')">← 返回数据</button>
+                    <button class="btn-primary" onclick="showSection('conclusion')">得出结论 →</button>
+                </div>
+            </section>
+
+            <!-- 实验结论部分 -->
+            <section id="conclusion" class="content-section">
+                <h2>实验结论</h2>
+                
+                <div class="conclusion-content">
+                    <div class="conclusion-section">
+                        <h3>主要结论</h3>
+                        <textarea class="conclusion-textarea" placeholder="请总结您的实验结论..."></textarea>
+                    </div>
+
+                    <div class="thinking-questions">
+                        <h3>思考题</h3>
+                        <div class="question-list">
+                            <div class="thinking-question">
+                                <p><strong>1.</strong> 为什么工程制图主要采用正投影而不是斜投影？</p>
+                                <textarea class="thinking-textarea" placeholder="请写出您的思考..."></textarea>
+                            </div>
+                            <div class="thinking-question">
+                                <p><strong>2.</strong> 如何在斜投影中控制变形程度？</p>
+                                <textarea class="thinking-textarea" placeholder="请写出您的思考..."></textarea>
+                            </div>
+                            <div class="thinking-question">
+                                <p><strong>3.</strong> 除了正投影和斜投影，还有哪些投影方式？它们各有什么特点？</p>
+                                <textarea class="thinking-textarea" placeholder="请写出您的思考..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-actions">
+                    <button class="btn-secondary" onclick="showSection('analysis')">← 返回分析</button>
+                    <button class="btn-success" onclick="submitReport()">提交报告</button>
+                </div>
+            </section>
+        </main>
+
+        <!-- 答案参考链接 -->
+        <div class="answer-panel">
+            <button id="toggleAnswers" class="answer-toggle">📖 查看参考答案</button>
+            <div id="answerContent" class="answer-content">
+                <h3>参考答案</h3>
+                <div class="answer-section">
+                    <h4>数据参考</h4>
+                    <p><strong>正方体边长：</strong>4.0 cm</p>
+                    <p><strong>正投影数据：</strong>所有边长均为 4.0 cm，比例 100%</p>
+                    <p><strong>斜投影数据：</strong>所有边长均为 4.62 cm，比例 115.5%</p>
+                </div>
+                <div class="answer-section">
+                    <h4>现象分析参考</h4>
+                    <p><strong>正投影：</strong>投影图形为正方形，与原正方体底面形状完全相同，投影边长与原边长相等。</p>
+                    <p><strong>斜投影：</strong>投影图形为菱形，发生了形状变形，投影边长大于原边长。</p>
+                </div>
+                <div class="answer-section">
+                    <h4>思考题参考</h4>
+                    <p><strong>问题1：</strong>工程制图采用正投影是因为它能真实反映物体的形状和尺寸，便于精确制造。</p>
+                    <p><strong>问题2：</strong>通过调整投射线与投影面的夹角θ来控制变形程度，变形比例为1/cosθ。</p>
+                    <p><strong>问题3：</strong>还有透视投影、等轴投影等，各有不同的视觉效果和应用场景。</p>
+                </div>
+            </div>
+        </div>
+
+        <footer class="experiment-footer">
+            <p>实验平台 © 2025 | 正投影与斜投影对比实验</p>
+        </footer>
+    </div>
+
+    <script src="student-script.js"></script>
+</body>
+</html>

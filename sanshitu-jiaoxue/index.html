@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正投影与斜投影对比实验报告</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="report-header">
+            <h1>实验报告一：正投影与斜投影对比实验</h1>
+            <div class="header-info">
+                <span class="date">实验日期：2025年10月24日</span>
+                <span class="location">实验地点：多媒体教室</span>
+            </div>
+        </header>
+
+        <nav class="table-of-contents">
+            <h2>目录</h2>
+            <ul>
+                <li><a href="#basic-info">一、实验基本信息</a></li>
+                <li><a href="#purpose">二、实验目的</a></li>
+                <li><a href="#principle">三、实验原理</a></li>
+                <li><a href="#equipment">四、实验器材与软件</a></li>
+                <li><a href="#steps">五、实验步骤</a></li>
+                <li><a href="#data">六、实验数据记录</a></li>
+                <li><a href="#analysis">七、实验现象与分析</a></li>
+                <li><a href="#conclusion">八、实验结论</a></li>
+                <li><a href="#reflection">九、实验反思与改进</a></li>
+                <li><a href="#questions">十、思考题</a></li>
+            </ul>
+        </nav>
+
+        <main class="report-content">
+            <section id="basic-info" class="section">
+                <h2>一、实验基本信息</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <strong>实验名称：</strong>正投影与斜投影对比实验
+                    </div>
+                    <div class="info-item">
+                        <strong>实验日期：</strong>2025年10月24日
+                    </div>
+                    <div class="info-item">
+                        <strong>实验地点：</strong>多媒体教室
+                    </div>
+                    <div class="info-item">
+                        <strong>实验者：</strong>[学生姓名]
+                    </div>
+                    <div class="info-item">
+                        <strong>指导教师：</strong>[教师姓名]
+                    </div>
+                    <div class="info-item">
+                        <strong>实验时长：</strong>15分钟
+                    </div>
+                </div>
+            </section>
+
+            <section id="purpose" class="section">
+                <h2>二、实验目的</h2>
+                <ul class="purpose-list">
+                    <li>理解正投影和斜投影的基本概念</li>
+                    <li>掌握两种投影方式的特点和区别</li>
+                    <li>观察不同投影方式下物体形状的变化规律</li>
+                    <li>学会使用GeoGebra软件进行投影模拟</li>
+                </ul>
+            </section>
+
+            <section id="principle" class="section">
+                <h2>三、实验原理</h2>
+                
+                <h3>3.1 投影的基本概念</h3>
+                <p><strong>投影：</strong>是指物体在光线照射下，在投影面上形成的影子。从技术角度，投影可分为两大类：</p>
+                <ul>
+                    <li><strong>中心投影：</strong>光源为点光源，光线呈放射状</li>
+                    <li><strong>平行投影：</strong>光源距离物体无限远，光线相互平行</li>
+                </ul>
+
+                <h3>3.2 正投影与斜投影的区别</h3>
+                <div class="comparison-grid">
+                    <div class="comparison-item">
+                        <h4>正投影：</h4>
+                        <ul>
+                            <li>投射线垂直于投影面</li>
+                            <li>投影能够真实反映物体的形状和尺寸</li>
+                            <li>是工程制图的主要方法</li>
+                        </ul>
+                    </div>
+                    <div class="comparison-item">
+                        <h4>斜投影：</h4>
+                        <ul>
+                            <li>投射线与投影面成一定角度（不垂直）</li>
+                            <li>投影会发生变形，产生立体感</li>
+                            <li>常用于艺术设计和建筑效果图</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>3.3 数学表达式</h3>
+                <p>设物体上任意一点P(x, y, z)，投影面为xy平面：</p>
+                <div class="math-formulas">
+                    <p><strong>正投影：</strong> \(P'(x, y, 0)\)</p>
+                    <p><strong>斜投影：</strong> \(P'(x + kz, y + lz, 0)\)，其中k, l为投影方向系数</p>
+                </div>
+            </section>
+
+            <section id="equipment" class="section">
+                <h2>四、实验器材与软件</h2>
+                <ul class="equipment-list">
+                    <li>计算机一台</li>
+                    <li>GeoGebra 3D软件</li>
+                    <li>多媒体显示设备</li>
+                </ul>
+            </section>
+
+            <section id="steps" class="section">
+                <h2>五、实验步骤</h2>
+                
+                <div class="step">
+                    <h3>步骤1：启动GeoGebra软件</h3>
+                    <ul>
+                        <li>打开GeoGebra软件，新建3D几何文件</li>
+                        <li>设置视图为三维透视模式</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <h3>步骤2：创建投影模型</h3>
+                    <pre><code class="language-javascript">// 设置透视模式
+SetPerspective("T")
+
+// 创建正方体模型
+A = (0, 0, 0)
+B = (4, 0, 0)
+C = (4, 4, 0)
+D = (0, 4, 0)
+E = (0, 0, 4)
+F = (4, 0, 4)
+G = (4, 4, 4)
+H = (0, 4, 4)
+
+// 绘制正方体
+Polyhedron(A, B, C, D, E, F, G, H)
+SetColor(Polyhedron(A, B, C, D, E, F, G, H), "blue")</code></pre>
+                </div>
+
+                <div class="step">
+                    <h3>步骤3：设置投影面</h3>
+                    <pre><code class="language-javascript">// 创建投影面（xy平面）
+ProjectionPlane = Plane((0, 0, 0), (1, 0, 0), (0, 1, 0))
+SetColor(ProjectionPlane, "lightgray")
+SetOpacity(ProjectionPlane, 0.7)</code></pre>
+                </div>
+
+                <div class="step">
+                    <h3>步骤4：演示正投影</h3>
+                    <pre><code class="language-javascript">// 正投影（投射线垂直于投影面）
+For(P, {A, B, C, D, E, F, G, H})
+  ProjectedP = Projection(P, ProjectionPlane)
+  Line(P, ProjectedP)
+  SetColor(Line(P, ProjectedP), "red")
+  SetLineThickness(Line(P, ProjectedP), 2)
+EndFor</code></pre>
+                </div>
+
+                <div class="step">
+                    <h3>步骤5：演示斜投影</h3>
+                    <pre><code class="language-javascript">// 斜投影（与投影面成60度角）
+For(P, {A, B, C, D, E, F, G, H})
+  ProjectedP = (X(P) + Z(P)*tan(30°), Y(P) + Z(P)*tan(30°), 0)
+  Line(P, ProjectedP)
+  SetColor(Line(P, ProjectedP), "green")
+  SetLineThickness(Line(P, ProjectedP), 2)
+EndFor</code></pre>
+                </div>
+
+                <div class="step">
+                    <h3>步骤6：观察和记录</h3>
+                    <ul>
+                        <li>观察两种投影的形状差异</li>
+                        <li>测量投影图形的边长变化</li>
+                        <li>记录观察结果</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="data" class="section">
+                <h2>六、实验数据记录</h2>
+                
+                <h3>6.1 原正方体尺寸</h3>
+                <ul>
+                    <li><strong>边长：</strong>4cm</li>
+                    <li><strong>体积：</strong>64cm³</li>
+                </ul>
+
+                <h3>6.2 正投影测量数据</h3>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>投影边</th>
+                                <th>长度 (cm)</th>
+                                <th>与原长比例</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>AB投影</td>
+                                <td>4.0</td>
+                                <td>100%</td>
+                            </tr>
+                            <tr>
+                                <td>BC投影</td>
+                                <td>4.0</td>
+                                <td>100%</td>
+                            </tr>
+                            <tr>
+                                <td>CD投影</td>
+                                <td>4.0</td>
+                                <td>100%</td>
+                            </tr>
+                            <tr>
+                                <td>DA投影</td>
+                                <td>4.0</td>
+                                <td>100%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>6.3 斜投影测量数据</h3>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>投影边</th>
+                                <th>长度 (cm)</th>
+                                <th>与原长比例</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>AB投影</td>
+                                <td>4.62</td>
+                                <td>115.5%</td>
+                            </tr>
+                            <tr>
+                                <td>BC投影</td>
+                                <td>4.62</td>
+                                <td>115.5%</td>
+                            </tr>
+                            <tr>
+                                <td>CD投影</td>
+                                <td>4.62</td>
+                                <td>115.5%</td>
+                            </tr>
+                            <tr>
+                                <td>DA投影</td>
+                                <td>4.62</td>
+                                <td>115.5%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="analysis" class="section">
+                <h2>七、实验现象与分析</h2>
+                
+                <h3>7.1 实验现象</h3>
+                <div class="phenomenon-grid">
+                    <div class="phenomenon-item">
+                        <h4>正投影现象：</h4>
+                        <ul>
+                            <li>投影图形为正方形，与原正方体底面形状完全相同</li>
+                            <li>投影边长与原边长相等，比例为1:1</li>
+                            <li>投射线垂直于投影面，呈平行状态</li>
+                        </ul>
+                    </div>
+                    <div class="phenomenon-item">
+                        <h4>斜投影现象：</h4>
+                        <ul>
+                            <li>投影图形为菱形，发生了形状变形</li>
+                            <li>投影边长大于原边长，比例约为1.155:1</li>
+                            <li>投射线与投影面成一定角度，呈放射状分布</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>7.2 现象分析</h3>
+                <div class="analysis-grid">
+                    <div class="analysis-item">
+                        <h4>正投影分析：</h4>
+                        <ul>
+                            <li>由于投射线垂直于投影面，所以投影能够真实反映物体的形状和尺寸</li>
+                            <li>投影图形与原物体相似，保持了几何相似性</li>
+                            <li>这种特性使得正投影成为工程制图的标准方法</li>
+                        </ul>
+                    </div>
+                    <div class="analysis-item">
+                        <h4>斜投影分析：</h4>
+                        <ul>
+                            <li>由于投射线与投影面成30度角，导致投影图形发生拉伸变形</li>
+                            <li>变形比例为1/cos(30°) ≈ 1.1547，与测量结果一致</li>
+                            <li>斜投影产生的立体感更强，适合用于视觉表现</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="conclusion" class="section">
+                <h2>八、实验结论</h2>
+                
+                <div class="conclusion-item">
+                    <h3>概念验证：</h3>
+                    <p>成功验证了正投影和斜投影的基本概念和特点</p>
+                </div>
+
+                <div class="conclusion-item">
+                    <h3>主要区别：</h3>
+                    <ul>
+                        <li>正投影的投射线垂直于投影面，斜投影的投射线与投影面成一定角度</li>
+                        <li>正投影能真实反映物体尺寸，斜投影会产生变形</li>
+                        <li>正投影适合工程制图，斜投影适合艺术表现</li>
+                    </ul>
+                </div>
+
+                <div class="conclusion-item">
+                    <h3>数学关系：</h3>
+                    <ul>
+                        <li>斜投影的变形比例为1/cosθ，其中θ为投射线与投影面的夹角</li>
+                        <li>当θ=0°时，斜投影变为正投影</li>
+                    </ul>
+                </div>
+
+                <div class="conclusion-item">
+                    <h3>应用价值：</h3>
+                    <ul>
+                        <li><strong>正投影：</strong>机械制造、建筑设计、工程制图等</li>
+                        <li><strong>斜投影：</strong>广告设计、建筑效果图、艺术创作等</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="reflection" class="section">
+                <h2>九、实验反思与改进</h2>
+                
+                <div class="reflection-grid">
+                    <div class="reflection-item">
+                        <h3>9.1 实验优点</h3>
+                        <ul>
+                            <li>使用GeoGebra软件直观展示了投影过程</li>
+                            <li>数据测量准确，验证了理论公式</li>
+                            <li>实验步骤清晰，可重复性强</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="reflection-item">
+                        <h3>9.2 存在问题</h3>
+                        <ul>
+                            <li>实验只使用了正方体一种几何体</li>
+                            <li>投影角度设置较为单一</li>
+                            <li>缺乏实际物体的投影验证</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="reflection-item">
+                        <h3>9.3 改进建议</h3>
+                        <ul>
+                            <li>增加不同形状几何体的投影实验</li>
+                            <li>尝试不同投影角度的对比</li>
+                            <li>结合实际物体进行投影练习</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="questions" class="section">
+                <h2>十、思考题</h2>
+                <div class="questions-list">
+                    <div class="question-item">
+                        <p><strong>1.</strong> 为什么工程制图主要采用正投影而不是斜投影？</p>
+                    </div>
+                    <div class="question-item">
+                        <p><strong>2.</strong> 如何在斜投影中控制变形程度？</p>
+                    </div>
+                    <div class="question-item">
+                        <p><strong>3.</strong> 除了正投影和斜投影，还有哪些投影方式？它们各有什么特点？</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="report-footer">
+            <div class="footer-info">
+                <p><strong>实验报告完成时间：</strong>2025年10月24日</p>
+                <p><strong>实验报告成绩：</strong>________</p>
+                <p class="note">（注：文档部分内容可能由AI生成）</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // MathJax配置
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            }
+        };
+
+        // 平滑滚动到锚点
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // 添加滚动时的导航高亮
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.section');
+            const navLinks = document.querySelectorAll('.table-of-contents a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
