@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoGebra 几何工具 - 离线版</title>
+    <script src="GeoGebra/deployggb.js"></script>
+</head>
+<body>
+
+    <h1>GeoGebra 几何工具</h1>
+    <p>专门用于几何图形构造和证明的离线版本。</p>
+    
+    <div id="ggb-element"></div>
+
+    <script>
+        var params = {
+            "appName": "geometry",
+            "width": 800,
+            "height": 600,
+            "showToolBar": true,
+            "showAlgebraInput": false,
+            "showMenuBar": true
+        };
+
+        var applet = new GGBApplet(params, true);
+        applet.setHTML5Codebase('GeoGebra/HTML5/5.0/web3d/');
+
+        window.addEventListener("load", function() { 
+            applet.inject('ggb-element');
+        });
+    </script>
+
+</body>
+</html>
